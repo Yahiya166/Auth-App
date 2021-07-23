@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+
+
+</head>
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBsr0ochaxr2bNfJ8oI_hfYFFl3ThJFXOo",
+        authDomain: "free-project-5805e.firebaseapp.com",
+        projectId: "free-project-5805e",
+        storageBucket: "free-project-5805e.appspot.com",
+        messagingSenderId: "518402432294",
+        appId: "1:518402432294:web:3fb0e3724c5adabb43f5e7",
+        measurementId: "G-6MTRBT8EHV"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<body>
+
+    <div class="container bor">
+        <form action="">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="fs-1 text-primary">Authrization(Login)</h1>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12 input">
+                    <input type="text" id="email" placeholder="Email:" required>
+                    <input type="password" id="password" placeholder="password:" required>
+                </div>
+            </div>
+
+        </form>
+
+
+        <div class="row">
+            <div class="col-md-12 ancher">
+                <p>If you are not remember your password? <a href="">Forget Password:</a> </p>
+            </div>
+        </div>
+
+
+        <div class="row mb-1">
+            <div class="col-md-12 loginSignup">
+                <button type="button" class="btn btn-outline-primary" onclick="Login()">Login</button>
+                <button type="button" class="btn btn-outline-primary" onclick="gotoSignUp()">Signup</button>
+            </div>
+        </div>
+
+        <hr class="text-light">
+
+
+        <div class="row mb-1">
+            <div class="col-md-12 hell">
+                <p>Social Media Apps Autherization:</p>
+            </div>
+        </div>
+
+
+        <div class="row mb-2">
+            <div class="col-md-12 auth">
+                <button type="button" class="btn btn-outline-primary" onclick="facebookLogin()">Facebook</button>
+                <button type="button" class="btn btn-outline-primary" onclick="GoogleLogin()">Google</button>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
