@@ -89,14 +89,14 @@ function GoogleLogin() {
             var token = credential.accessToken;
             // The signed-in user info.
             var user = result.user;
-            let create_google_users = {
+            let create_users = {
                 name: user.displayName,
                 email: user.email,
                 profile: user.photoURL,
                 uid: user.uid,
             }
 
-            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_google_users).then(() => {
+            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_users).then(() => {
                 alert(user.displayName + " is login successfull")
                 window.location.replace("index2.html");
                 // console.log(create_google_users);
@@ -133,7 +133,7 @@ function facebookLogin() {
 
             // The signed-in user info.
             var user = result.user;
-            let create_facebook_users = {
+            let create_users = {
                 name: user.displayName,
                 email: user.email,
                 profile: user.photoURL,
@@ -145,7 +145,7 @@ function facebookLogin() {
 
             // console.log(user);
 
-            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_facebook_users).then(() => {
+            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_users).then(() => {
                 alert(user.displayName + " is login successfull")
                 window.location.replace("index2.html");
             })
