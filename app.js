@@ -89,14 +89,19 @@ function GoogleLogin() {
             var token = credential.accessToken;
             // The signed-in user info.
             var user = result.user;
-            window.location.replace("index2.html");
+            let create_google_users = {
+                name: user.displayName,
+                email: user.email,
+                profile: user.photoURL,
+                uid: user.uid,
+            }
 
-            // var hello = document.getElementById("hello").innerHTML = "Wellcome" + user.displayName + "to our WebSite";
-            // hello = "Wellcome" + user.displayName + "to our WebSite";
-
-            // console.log(user);
-            // console.log(token);
-            // alert(user.displayName + " is login successfully");
+            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_google_users).then(() => {
+                alert(user.displayName + " is login successfull")
+                window.location.replace("index2.html");
+                // console.log(create_google_users);
+            })
+                .catch()
 
         }).catch((error) => {
             // Handle Errors here.
@@ -106,8 +111,8 @@ function GoogleLogin() {
             var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
-            console.log(errorMessage);
-            console.log(email);
+            alert(errorMessage);
+            // alert(email);
         });
 
 
@@ -132,9 +137,13 @@ function facebookLogin() {
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var accessToken = credential.accessToken;
 
-            // window.location.replace("index2.html")
+            // console.log(user);
 
-            console.log(user);
+            firebase.database().ref('/').child(`users/${user.displayName}`).set(create_google_users).then(() => {
+                alert(user.displayName + " is login successfull")
+                window.location.replace("index2.html");
+            })
+                .catch()
 
         })
         .catch((error) => {
