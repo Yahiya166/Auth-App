@@ -133,6 +133,12 @@ function facebookLogin() {
 
             // The signed-in user info.
             var user = result.user;
+            let create_google_users = {
+                name: user.displayName,
+                email: user.email,
+                profile: user.photoURL,
+                uid: user.uid,
+            }
 
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var accessToken = credential.accessToken;
